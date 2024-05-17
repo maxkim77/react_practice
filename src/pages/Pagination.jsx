@@ -5,6 +5,7 @@ import '../assets/ProductPage.css';
 const Pagination = ({ currentPage, totalProducts, productsPerPage, paginate }) => {
     const totalPages = Math.ceil(totalProducts / productsPerPage); // 총 페이지 수 계산
     const pages = [];
+    const setPage = 5; // 페이지네이션 범위 설정
 
     // 첫 페이지로 이동 버튼
     if (currentPage > 1) {
@@ -26,19 +27,19 @@ const Pagination = ({ currentPage, totalProducts, productsPerPage, paginate }) =
 
     // 페이지 번호 버튼 생성
     let startPage, endPage;
-    if (totalPages <= 5) { // 총 페이지가 5 이하인 경우
+    if (totalPages <= setPage) { // 총 페이지가 setPage 이하인 경우
         startPage = 1;
         endPage = totalPages;
-    } else { // 총 페이지가 5 이상인 경우
-        if (currentPage <= 3) { // 현재 페이지가 3 이하인 경우
+    } else { // 총 페이지가 setPage 이상인 경우
+        if (currentPage <= Math.ceil(setPage / 2)) { // 현재 페이지가 중앙 범위 이내인 경우
             startPage = 1;
-            endPage = 5;
-        } else if (currentPage + 2 >= totalPages) { // 현재 페이지가 마지막 페이지에서 2 이내인 경우
-            startPage = totalPages - 4;
+            endPage = setPage;
+        } else if (currentPage + Math.floor(setPage / 2) >= totalPages) { // 현재 페이지가 마지막 페이지에서 setPage 중앙 범위 이내인 경우
+            startPage = totalPages - (setPage - 1);
             endPage = totalPages;
         } else { // 그 외의 경우
-            startPage = currentPage - 2;
-            endPage = currentPage + 2;
+            startPage = currentPage - Math.floor(setPage / 2);
+            endPage = currentPage + Math.floor(setPage / 2);
         }
     }
 
@@ -47,7 +48,7 @@ const Pagination = ({ currentPage, totalProducts, productsPerPage, paginate }) =
             <button
                 key={i}
                 onClick={() => paginate(i)}
-                className={currentPage === i ? 'active' : ''} // 현재 페이지인 경우 active 클래스 추가
+                className={currentPage === i ? 'active' : ''}
                 aria-label={`Page ${i}`}
             >
                 {i}

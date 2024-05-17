@@ -30,8 +30,9 @@
 }
 
 /* ProductPage.css */
+/* ProductPage.css */
 .pagination button.active {
-background-color: #96d2f2; /* 원하는 색상으로 변경 */
-color: white;
-border: 1px solid #3f1153;
+  background-color: #8db1d8;
+  color: white;
+  font-weight: bold;
 }

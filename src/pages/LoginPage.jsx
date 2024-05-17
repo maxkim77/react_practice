@@ -6,12 +6,10 @@ import '../assets/LoginPage.css'; // LoginPage.css 파일을 import
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [loginSuccess, setLoginSuccess] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setLoginSuccess(false);
 
     try {
       const response = await fetch('https://dummyjson.com/auth/login', {
@@ -25,9 +23,7 @@ const LoginPage = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        console.log('Login successful:', data);
         document.cookie = `authToken=${data.token};max-age=${60 * 30};path=/`;
-        setLoginSuccess(true);
         navigate('/mypage'); // 로그인 성공 후 리디렉션
       }
     } catch (error) {
@@ -62,7 +58,6 @@ const LoginPage = () => {
           </div>
           <button type="submit">Login</button>
         </form>
-        {loginSuccess && <p className="success">Login Successful!</p>}
       </div>
     </div>
   );

@@ -1,22 +1,18 @@
 // SinglePage.jsx
 import React, { useState, useEffect } from 'react'; // useEffect 추가
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const SinglePage = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
+  const navigate = useNavigate();
   const fetchProduct = async () => {
     try {
       const res = await fetch(`https://dummyjson.com/products/${productId}`);
-      if (!res.ok) {
-        // throw new Error('Failed to fetch product details');
-      }
       const data = await res.json();
       setProduct(data);
     } catch (err) {
-      // setError(err.message);  // 에러 메시지를 설정하되 출력하지 않음
     } finally {
       setIsLoading(false);
     }
@@ -36,7 +32,7 @@ const SinglePage = () => {
       <img src={product.images[0]} alt={product.title} style={{ width: '100%' }} />
       <p>{product.description}</p>
       <p>Price: ${product.price}</p>
-      <Link to="/products" className="blue-button">Go back to Products</Link> {/* 파란색 버튼 스타일을 적용 */}
+      <button onClick={() => navigate(-1)} className="blue-button">Go back</button>
     </div>
   );
 };
