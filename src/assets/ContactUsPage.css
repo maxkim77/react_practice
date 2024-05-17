@@ -1,0 +1,69 @@
+/* src/assets/ContactUsPage.css */
+
+/* 배경 커버 스타일 */
+
+/* 페이지 컨테이너 스타일 */
+.page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 폼 컨테이너 스타일 */
+.contact-form {
+    background-color: #8c8b8b; /* Tailwind CSS의 white 색상 */
+    padding: 24px; /* Tailwind CSS의 p-6 */
+    border-radius: 8px; /* Tailwind CSS의 rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind CSS의 shadow-lg */
+    width: 100%;
+    max-width: 600px; /* Tailwind CSS의 max-w-md */
+}
+
+/* 폼 요소 스타일 */
+.contact-form label {
+    display: block;
+    font-size: 1.125rem; /* Tailwind CSS의 text-lg */
+    font-weight: 500; /* Tailwind CSS의 font-medium */
+    margin-bottom: 8px; /* Tailwind CSS의 mb-2 */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 400px;
+    padding: 12px; /* Tailwind CSS의 p-3 */
+    border: 1px solid #d1d5db; /* Tailwind CSS의 border-gray-300 */
+    border-radius: 8px; /* Tailwind CSS의 rounded-lg */
+    font-size: 1rem; /* Tailwind CSS의 text-base */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #3b82f6; /* Tailwind CSS의 border-blue-500 */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); /* Tailwind CSS의 ring-blue-500 */
+}
+
+/* 제출 버튼 스타일 */
+.contact-form button {
+    width: 200px;
+    background-color: #3b82f6; /* Tailwind CSS의 bg-blue-500 */
+    color: #ffffff; /* Tailwind CSS의 text-white */
+    padding: 12px; /* Tailwind CSS의 p-3 */
+    border-radius: 8px; /* Tailwind CSS의 rounded-lg */
+    font-weight: 500; /* Tailwind CSS의 font-medium */
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #2563eb; /* Tailwind CSS의 hover:bg-blue-600 */
+}
+
+/* 성공 메시지 스타일 */
+.success-message {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #d1fae5; /* Tailwind CSS의 bg-green-100 */
+    color: #065f46; /* Tailwind CSS의 text-green-700 */
+    border-radius: 8px; /* Tailwind CSS의 rounded-lg */
+}

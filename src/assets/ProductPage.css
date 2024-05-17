@@ -1,0 +1,37 @@
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.product-item {
+  width: 25%; /* 한 줄에 4개씩 표시 */
+  padding: 10px;
+  box-sizing: border-box; /* padding을 포함한 너비가 25%가 되도록 설정 */
+}
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  margin: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
+/* ProductPage.css */
+.pagination button.active {
+background-color: #96d2f2; /* 원하는 색상으로 변경 */
+color: white;
+border: 1px solid #3f1153;
+}

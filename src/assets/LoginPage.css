@@ -1,0 +1,40 @@
+
+/* 배경은 검은색이고 글씨는 흰색 */
+.login-page {
+  background-color: black;
+  color: white;
+}
+
+/* 로그인 폼 스타일 */
+.login-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* 입력 필드 스타일 */
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* 로그인 버튼 스타일 */
+.login-form button {
+  width: 90px;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* 에러 메시지 스타일 */
+.error {
+  color: red;
+}
+
+/* 성공 메시지 스타일 */
+.success {
+  color: green;
+}

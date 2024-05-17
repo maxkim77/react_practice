@@ -1,0 +1,9 @@
+/* AboutUsPage.css */
+
+.page-content {
+    background-color: rgb(95, 95, 94);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
