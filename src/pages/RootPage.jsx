@@ -11,7 +11,8 @@ const RootPage = () => {
   */
   const handleXHRCall = () => {
     const xhr = new XMLHttpRequest(); // 새로운 XMLHttpRequest 객체 생성
-    xhr.open('GET', 'https://dummyjson.com/products'); // 요청 초기화
+    xhr.open('GET', 'https://dummyjson.com/products', true); // 요청 메서드 mehtod, url, async여부
+    //http요청이완료되었을때.
     xhr.onload = () => {
       if (xhr.status >= 200 && xhr.status < 300) { // 성공적인 응답 처리
         const data = JSON.parse(xhr.responseText).products; // 응답 데이터 파싱
@@ -25,6 +26,7 @@ const RootPage = () => {
     jQuery 라이브러리를 사용하여 네트워크 요청을보냄
     ajax 메서드를 사용하면 간결하게 네트워크 요청을 보낼 수 있음
     내부적으로 XMLHttpRequest(XHR)를 사용하여 비동기 HTTP 요청을 처리
+    XML(eXtensible Markup Language)은 데이터를 저장하고 전달하기 위해 설계된 마크업 언어
   */
   const handleAjaxCall = () => {
     $.ajax({
@@ -59,9 +61,9 @@ JSON 응답을 자동으로 파싱할 수 있습니다.
       .then(response => { // 성공적인 응답 처리
         setProducts(response.data.products); // 상태 업데이트
       })
-      .catch(error => {
-        console.error('There was an error!', error);
-      });
+      // .catch(error => {
+      //   console.error('There was an error!', error);
+      // });
   };
 
   return (
